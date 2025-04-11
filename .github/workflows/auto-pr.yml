@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout full history
+      - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Needed to get full git history and branches
+          fetch-depth: 0
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
