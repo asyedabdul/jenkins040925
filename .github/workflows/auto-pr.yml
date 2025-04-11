@@ -10,13 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout full history
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Needed to get full git history and branches
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.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 }}
+          token: ${{ secrets.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 }}
           base: main
           branch: develop
           title: 'Auto PR: Merge develop → main'
