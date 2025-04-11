@@ -16,7 +16,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.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 }}
           base: main
           branch: develop
           title: 'Auto PR: Merge develop → main'
