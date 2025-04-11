@@ -1,4 +1,4 @@
-name: Auto PR from Develop to Main
+name: Minimal PR Test
 
 on:
   push:
@@ -6,22 +6,17 @@ on:
       - develop
 
 jobs:
-  create-pull-request:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Create Pull Request
+      - name: Create PR
         uses: peter-evans/create-pull-request@v5.0.1
         with:
-          token: {{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           base: main
           branch: develop
-          title: 'Auto PR: Merge develop → main'
-          body: 'This PR was automatically created due to a push on `develop`.'
-          draft: false
-          delete-branch: false
