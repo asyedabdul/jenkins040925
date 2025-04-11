@@ -17,6 +17,6 @@ jobs:
       - name: Create PR
         uses: peter-evans/create-pull-request@v5.0.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_PAT }}
           base: main
           branch: develop
